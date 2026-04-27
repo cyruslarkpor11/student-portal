@@ -236,57 +236,22 @@ Once logged in as an instructor, you'll see the instructor dashboard with these 
 ### Option 1: Railway
 Railway is a beginner-friendly platform that makes it easy to deploy PHP apps with a managed database.
 
-#### Step-by-Step Railway Deployment:
-
-1. **Create Railway Account**
-   - Go to: `https://railway.app`
-   - Sign up with GitHub or email
-
-2. **Create New Project**
-   - Click "New Project"
-   - Choose "Deploy from GitHub repo" or "Empty Project"
-
-3. **Add Database**
-   - In your project dashboard, click "Add Plugin"
-   - Search for "MySQL" and add it
-   - Wait for the database to be created
-
-4. **Set Environment Variables**
-   - Go to "Variables" tab in your project
-   - Add these variables (copy from Railway MySQL plugin settings):
-     ```
-     DB_HOST=YOUR_MYSQL_HOST
-     DB_USER=YOUR_MYSQL_USER
-     DB_PASSWORD=YOUR_MYSQL_PASSWORD
-     DB_NAME=YOUR_MYSQL_DATABASE
-     DB_PORT=3306
-     RAILWAY_ENVIRONMENT=true
-     ```
-
-5. **Deploy Your Code**
-   - If using GitHub: Connect your repository
-   - If manual: Use Railway CLI or upload files
-   - Railway will automatically detect PHP and deploy
-
-6. **Initialize Database**
-   - Once deployed, open your Railway URL
-   - Run the setup scripts:
-     ```
-     https://<your-app>.railway.app/includes/create_tables.php
-     https://<your-app>.railway.app/insert_sample_data.php
-     ```
-
-7. **Access Your App**
-   - Use the Railway-generated URL
-   - Login with the credentials from step 6
-
-#### Troubleshooting "Application failed to respond":
-
-- **Check Environment Variables**: Ensure all DB_* variables are set correctly
-- **Database Connection**: Verify MySQL plugin is active and variables match
-- **PHP Version**: Railway uses PHP 8.1+ by default
-- **File Permissions**: Make sure uploads/ directory is writable
-- **Check Logs**: Go to "Deployments" → "View Logs" in Railway dashboard
+1. Open: `https://railway.app`
+2. Sign up and create a new project.
+3. Connect your GitHub repository or deploy from local files.
+4. Add a MySQL plugin and configure the database.
+5. Set environment variables in Railway for your DB connection:
+   - `DB_HOST`
+   - `DB_NAME`
+   - `DB_USER`
+   - `DB_PASSWORD`
+   - `DB_PORT`
+6. Deploy the app and use the Railway URL.
+7. Open the deployed URL and run the setup scripts if needed:
+   ```
+   https://<your-railway-app>.railway.app/includes/create_tables.php
+   https://<your-railway-app>.railway.app/insert_sample_data.php
+   ```
 
 > Tip: For local testing, keep using XAMPP and the `localhost` URLs from STEP 1.
 
