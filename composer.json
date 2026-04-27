@@ -1,0 +1,20 @@
+{
+  "name": "ame-zion-university-portal",
+  "description": "Student and Instructor Portal for AME Zion University",
+  "type": "project",
+  "require": {
+    "php": ">=7.4",
+    "ext-pdo": "*",
+    "ext-mysqli": "*"
+  },
+  "config": {
+    "platform": {
+      "php": "8.1"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "echo 'PHP application ready for deployment'"
+    ]
+  }
+}

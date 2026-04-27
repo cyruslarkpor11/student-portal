@@ -1,8 +1,5 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "myproject";
+require "db.php";
 
 function tableExists(PDO $conn, string $table): bool
 {
@@ -102,13 +99,6 @@ function getPrimaryLikeColumn(PDO $conn, string $table, array $candidates): ?str
 <div class="container">
 <?php
 try {
-    $connInitial = new PDO("mysql:host=$servername", $username, $password);
-    $connInitial->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $connInitial->exec("CREATE DATABASE IF NOT EXISTS `$dbname`");
-
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     $createdTables = [];
 
     $conn->exec("
